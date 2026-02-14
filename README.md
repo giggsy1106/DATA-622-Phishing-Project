@@ -1,3 +1,4 @@
+DATA 622 NLP Mini Project
 PhishNLP: Phishing Email Detection using NLP
 A mini‑project for DATA 622 focused on detecting phishing and spam emails using Natural Language Processing (NLP) and machine‑learning techniques. The project walks through text preprocessing, feature extraction, model training, and evaluation.
 
