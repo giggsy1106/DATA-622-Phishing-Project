@@ -1,0 +1,19 @@
+phishnlp/
+├─ datasets/
+│  ├─ raw/
+│  ├─ processed/
+│  ├─ splits/
+│  └─ features/
+├─ notebooks/
+│  └─ phishnlp_training.ipynb
+├─ src/
+│  ├─ data_prep.py
+│  ├─ train.py
+│  ├─ evaluate.py
+│  └─ utils.py
+├─ outputs/
+│  ├─ confusion_matrix.png
+│  ├─ classification_report.txt
+│  └─ metrics.json
+├─ README.md
+└─ .gitignore
