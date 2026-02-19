@@ -1,104 +1,156 @@
-DATA 622 NLP Mini Project
 PhishNLP: Phishing Email Detection using NLP
-A mini‑project for DATA 622 focused on detecting phishing and spam emails using Natural Language Processing (NLP) and machine‑learning techniques. The project walks through text preprocessing, feature extraction, model training, and evaluation.
+
+A mini-project for DATA 622 (Natural Language Processing) at University of Maryland, Baltimore County (UMBC).
+This project focuses on detecting phishing and spam emails using Natural Language Processing (NLP) and machine learning techniques.
 
 Team
-Rahul
+
+Rahul Reddy Kota
+
 Lalith
 
-Objective
-Build a classifier that labels email text as:
+Problem Statement
+
+Phishing emails are a major cybersecurity threat, often designed to trick users into revealing sensitive information.
+This project aims to build a binary classification model that can automatically distinguish between:
 
 Label	Description
-1	Spam / Phishing‑like
-0	Legitimate (Ham)
- Dataset
+1	Spam / Phishing Email
+0	Legitimate Email (Ham)
+Dataset
+
 File: emails.csv
 
 Columns:
 
-text — raw email content
+text → Raw email content
 
-label — ground‑truth classification (1 = spam/phish, 0 = ham)
+label → Ground truth classification (1 = spam/phish, 0 = ham)
 
- Methodology
+Methodology
 1. Text Preprocessing
-Lowercasing
 
-Removing punctuation
+To prepare raw email data for modeling, we apply:
 
-Removing stopwords
+Lowercasing text
+
+Removing punctuation and special characters
+
+Removing stopwords (common words like "the", "is")
 
 Tokenization
 
-Optional: Lemmatization/Stemming
+Optional lemmatization/stemming
 
 2. Feature Engineering
-TF‑IDF vectorization
 
-Experimentation with n‑grams (unigrams, bigrams)
+We convert text into numerical form using:
+
+TF-IDF Vectorization
+
+N-grams (unigrams and bigrams)
+
+This helps capture both individual words and short phrases.
 
 3. Model Training
-Logistic Regression classifier
 
-Train/test split
+We use a Logistic Regression classifier as the baseline model:
+
+Train-test split (e.g., 80/20)
+
+Model training on processed features
 
 Optional hyperparameter tuning
 
-4. Evaluation
-Metrics include:
+4. Evaluation Metrics
+
+The model is evaluated using:
 
 Confusion Matrix
+
+Accuracy
 
 Precision
 
 Recall
 
-F1‑Score
+F1-Score
 
-Accuracy
+These metrics help measure both correctness and the ability to detect phishing emails effectively.
 
 Results
+
 The notebook outputs:
 
-Confusion matrix
+Confusion Matrix visualization
 
-Classification metrics
+Classification report (Precision, Recall, F1-score)
 
-Optional example predictions
+Sample predictions
+
+The model demonstrates the effectiveness of TF-IDF + Logistic Regression as a baseline for phishing detection.
 
 Project Structure
-Code
 PhishNLP/
 │
-├── emails.csv
-├── notebook.ipynb
-├── README.md
-└── requirements.txt
-Running the Project
-1. Install Dependencies
-bash
+├── emails.csv            # Dataset
+├── notebook.ipynb        # Main analysis and model training
+├── README.md             # Project documentation
+└── requirements.txt      # Dependencies
+Installation
+1. Clone the Repository
+git clone https://github.com/your-username/PhishNLP.git
+cd PhishNLP
+2. Install Dependencies
 pip install -r requirements.txt
-2. Launch the Notebook
-bash
+Usage
+Launch Jupyter Notebook
 jupyter notebook notebook.ipynb
-3. Run All Cells
-This will preprocess the data, train the model, and display evaluation metrics.
+Run All Cells
 
- Requirements
+This will:
+
+Load the dataset
+
+Preprocess text
+
+Extract features
+
+Train the model
+
+Evaluate performance
+
+Requirements
+
 Example dependencies:
 
-Code
 pandas
 numpy
 scikit-learn
 nltk
 matplotlib
 Future Enhancements
-Try additional models (SVM, Random Forest, XGBoost)
 
-Use embeddings (Word2Vec, GloVe, BERT)
+Compare additional models (SVM, Random Forest, XGBoost, LightGBM)
 
-Deploy as a web app or API
+Add character n-grams to detect obfuscated phishing patterns
 
-Add explainability tools (LIME, SHAP)
+Incorporate handcrafted features (URLs, keywords, punctuation patterns)
+
+Handle class imbalance using SMOTE or class weights
+
+Perform hyperparameter tuning using GridSearchCV
+
+Improve explainability using feature importance or SHAP
+
+Deploy the model as a REST API or web application
+
+Key Learnings
+
+Importance of text preprocessing in NLP pipelines
+
+Effectiveness of TF-IDF for traditional ML models
+
+Trade-offs between precision and recall in phishing detection
+
+End-to-end workflow from data → model → evaluation
