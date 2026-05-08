@@ -7,7 +7,7 @@ Team
 
 Rahul Reddy Kota
 
-Lalith
+Lalit
 
 Problem Statement
 
